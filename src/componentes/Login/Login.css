@@ -1,0 +1,36 @@
+.container {
+    clear: both;
+    width: 900px; 
+    margin: 100px auto;
+
+}
+
+.content {
+    display: flex;
+}
+
+.left-image {
+    float: left; 
+    border-radius: 10px 0px 0px 10px;
+    margin-right: 20px; 
+    width: 450px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
+
+.text-block {
+    margin: 0px;
+    overflow: hidden; 
+    width: 450px;
+    background-color: #D9D9D9;
+    border-radius: 0px 10px 10px 0px;
+    flex: 1;
+    padding: 10px 20px;
+}
+
+h1, p {
+    text-align: center;
+    font-weight: bold;
+}
