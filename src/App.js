@@ -1,3 +1,11 @@
+import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+  Link,
+} from 'react-router-dom';
 import './App.css';
 import Cabecalho from './componentes/Cabecalho/Cabecalho'
 import Imagem from './componentes/Imagem/Imagem'
@@ -54,8 +62,25 @@ import Mapa from './componentes/Monitoramento/Mapa/Mapa';
 //   );
 // }
 
+// Componente de Página Inicial
+const Home = () => {
+  return <h2>Home Page - Bem-vindo!</h2>;
+};
+
+// Componente de Boas-Vindas
+const Welcome = () => {
+  return <h2>!</h2>;
+};
+
+
 function App() {
+  const [authenticated, setAuthenticated] = useState(false);
+
+  const handleLogin = () => {
+    setAuthenticated(true);
+  };
   return (
+    
     <div>
       <Cabecalho img="./imagens/conta.svg"/>
       <div className='total-content'>
@@ -69,6 +94,23 @@ function App() {
           <Dados dados="5"/>
         </div>
       </div>
+
+      <Router>
+      <div>
+        <Routes>
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route
+            path="/home"
+            element={
+              authenticated ? <Home /> : <Navigate to="/login" replace />
+            }
+          />
+          <Route path="/welcome" element={<Welcome />} />
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </Routes>
+      </div>
+    </Router>
+
     </div>
   );
 }

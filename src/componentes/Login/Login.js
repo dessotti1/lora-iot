@@ -1,8 +1,22 @@
-import './Login.css'
+import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import CampoTexto from '../CampoTexto/CampoTexto';
 import Botao from '../Botao/Botao';
+import './Login.css';
 
-const Login = (props) => {
+
+const Login = ({ onLogin }) => {
+    const [loggedIn, setLoggedIn] = useState(false);
+    const handleLogin = () => {
+        // Simulação de login bem-sucedido
+        setLoggedIn(true);
+        onLogin();
+      };
+    
+      if (loggedIn) {
+        return <Navigate to="/home" />;
+      }
+
     return(
         <div className="container">
             <div className="content">
@@ -20,7 +34,7 @@ const Login = (props) => {
                     placeholder="Digite a senha"
                     />
 
-                    <Botao text="Logar"/>
+                    <Botao onClick={handleLogin} text="Logar"/>
                     <br></br>
 
                     <p>É seu primeiro acesso?</p>
