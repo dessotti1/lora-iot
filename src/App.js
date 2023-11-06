@@ -77,7 +77,7 @@ const Welcome = () => {
           <Sensor text="W45N1B71" location="(-45.78, 75.67)" data="5" ativo={true} />
         </div>
         <div className='grid-item'>
-          <Mapa />
+          <Mapa latitude="-22.008789" longitude="-47.904553"/>
         </div>
         <div className='grid-item'>
           <Dados dados="5"/>
