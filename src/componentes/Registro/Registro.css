@@ -22,7 +22,7 @@
 
 .text-block {
     margin: 0px;
-    overflow: hidden; 
+    /* overflow: hidden;  */
     width: 450px;
     background-color: #D9D9D9;
     border-radius: 0px 10px 10px 0px;

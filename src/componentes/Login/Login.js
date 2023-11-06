@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
 import CampoTexto from '../CampoTexto/CampoTexto';
 import Botao from '../Botao/Botao';
 import './Login.css';
-
+import Cabecalho from '../Cabecalho/Cabecalho'
+import { useNavigate  } from 'react-router-dom';
 
 const Login = ({ onLogin }) => {
     const [loggedIn, setLoggedIn] = useState(false);
+    const navigate = useNavigate();
     const handleLogin = () => {
         // Simulação de login bem-sucedido
         setLoggedIn(true);
-        onLogin();
+        console.log("Login realizado com sucesso");
+        navigate('/welcome');
       };
     
-      if (loggedIn) {
-        return <Navigate to="/home" />;
-      }
-
+      
     return(
+        <div> <Cabecalho img="./imagens/conta.svg"/>
         <div className="container">
+            
             <div className="content">
                 <img src="/imagens/enchente2.jpg" className="left-image"/>
                 <div class="text-block">
@@ -33,8 +34,10 @@ const Login = ({ onLogin }) => {
                     <CampoTexto label="Senha" 
                     placeholder="Digite a senha"
                     />
+                    <div className="login">
+                        <button onClick={handleLogin} className="botao-login">Login</button>
+                    </div>
 
-                    <Botao onClick={handleLogin} text="Logar"/>
                     <br></br>
 
                     <p>É seu primeiro acesso?</p>
@@ -44,6 +47,8 @@ const Login = ({ onLogin }) => {
                 </div>
             </div>
         </div>
+        </div>
+        
     );
 }
 

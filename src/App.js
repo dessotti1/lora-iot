@@ -69,18 +69,7 @@ const Home = () => {
 
 // Componente de Boas-Vindas
 const Welcome = () => {
-  return <h2>!</h2>;
-};
-
-
-function App() {
-  const [authenticated, setAuthenticated] = useState(false);
-
-  const handleLogin = () => {
-    setAuthenticated(true);
-  };
   return (
-    
     <div>
       <Cabecalho img="./imagens/conta.svg"/>
       <div className='total-content'>
@@ -94,8 +83,19 @@ function App() {
           <Dados dados="5"/>
         </div>
       </div>
+    </div>
+  );
+};
 
-      <Router>
+
+function App() {
+  const [authenticated, setAuthenticated] = useState(false);
+
+  const handleLogin = () => {
+    setAuthenticated(true);
+  };
+  return (
+    <Router>
       <div>
         <Routes>
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
@@ -110,8 +110,6 @@ function App() {
         </Routes>
       </div>
     </Router>
-
-    </div>
   );
 }
 
