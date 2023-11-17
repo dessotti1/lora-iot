@@ -1,0 +1,9 @@
+.tableSensores {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 1000px; /* ajuste conforme necessário */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}

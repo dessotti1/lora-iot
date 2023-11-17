@@ -4,7 +4,7 @@ import Botao from '../Botao/Botao';
 import './Login.css';
 import Cabecalho from '../Cabecalho/Cabecalho'
 import { useNavigate  } from 'react-router-dom';
-
+import Button from 'react-bootstrap/Button';
 const Login = ({ onLogin }) => {
     const [loggedIn, setLoggedIn] = useState(false);
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ const Login = ({ onLogin }) => {
     return(
         <div> <Cabecalho img="./imagens/conta.svg"/>
         <div className="container">
-            
+        <Button variant="primary">Primary</Button>{' '}
             <div className="content">
                 <img src="/imagens/enchente2.jpg" className="left-image"/>
                 <div class="text-block">
