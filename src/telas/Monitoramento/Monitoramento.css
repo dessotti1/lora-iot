@@ -1,0 +1,22 @@
+div {
+    margin: auto;
+  }
+  
+  .total-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    height: 80vh;
+  }
+  
+  .grid-item {
+    border: 1px solid white;
+    padding: 10px;
+    width: 450px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
