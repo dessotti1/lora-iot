@@ -33,7 +33,7 @@ const Sensores = ({ sensoresList }) => {
 
   return (
     <div className="tableSensores">
-      <Form>
+      {/* <Form>
         <Row >
           <Form.Group as={Col} controlId="sensor">
             <Form.Control type="text" placeholder="Sensor" />
@@ -45,7 +45,7 @@ const Sensores = ({ sensoresList }) => {
             </Button>
           </Col>
         </Row>
-      </Form>
+      </Form> */}
       <br />
       <Row>
       <div>
