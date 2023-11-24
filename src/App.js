@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
+
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
-  Link,
+  
 } from 'react-router-dom';
 import './App.css';
 import Cabecalho from './componentes/Cabecalho/Cabecalho'
-import Imagem from './componentes/Imagem/Imagem'
 import Menu from './componentes/Menu/Menu'
 import Login from './componentes/Login/Login'
 import Registro from './componentes/Registro/Registro'
+import Sensores from './componentes/Sensores/Sensores';
 import Sensor from './componentes/Monitoramento/Sensor/Sensor';
 import Dados from './componentes/Monitoramento/Dados/Dados';
 import Mapa from './componentes/Monitoramento/Mapa/Mapa';
@@ -71,7 +72,6 @@ const Home = () => {
 const Welcome = () => {
   return (
     <div>
-      <Cabecalho img="./imagens/conta.svg"/>
       <div className='total-content'>
         <div className='grid-item'>
           <Sensor text="W45N1B71" location="(-45.78, 75.67)" data="5" ativo={true} />
@@ -94,8 +94,9 @@ function App() {
   const handleLogin = () => {
     setAuthenticated(true);
   };
+
   return (
-    <Router>
+    <Router> 
       <div>
         <Routes>
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
@@ -105,6 +106,8 @@ function App() {
               authenticated ? <Home /> : <Navigate to="/login" replace />
             }
           />
+          <Route path="/sensores" element={<Sensores />} />
+
           <Route path="/welcome" element={<Welcome />} />
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
