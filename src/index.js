@@ -12,7 +12,7 @@ import Cabecalho from './componentes/Cabecalho/Cabecalho';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Cabecalho/>
+    <Cabecalho img="./imagens/login.svg"/>
     <App />
   </React.StrictMode>
 );
