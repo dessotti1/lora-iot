@@ -7,13 +7,15 @@
 
 .content {
     display: flex;
+    margin-top: 30px;
+    justify-content: center;
 }
 
 .left-image {
     float: left; 
     border-radius: 10px 0px 0px 10px;
     margin-right: 20px; 
-    width: 450px;
+    max-width: 400px;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;

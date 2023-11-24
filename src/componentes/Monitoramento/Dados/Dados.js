@@ -5,11 +5,11 @@ const Dados = (props) => {
     let status = ""
     let backgroundColorClass = ""
 
-    if (props.dados <= 40){
+    if (props.dados <= 1600){
         status = "Normal"
         backgroundColorClass = '#3FA50F';
     }
-    else if (props.dados <= 100){
+    else if (props.dados <= 2000){
         status = "Preocupante"
         backgroundColorClass = '#F3F320'
     }

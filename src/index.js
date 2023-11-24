@@ -5,14 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import Cabecalho from './componentes/Cabecalho/Cabecalho';
+// import Cabecalho from './componentes/Cabecalho/Cabecalho';
 // other imports...
 
 // your code...
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Cabecalho img="./imagens/login.svg"/>
+    {/* <Cabecalho img="./imagens/login.svg"/> */}
     <App />
   </React.StrictMode>
 );

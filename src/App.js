@@ -7,66 +7,28 @@ import {
   Navigate,
   
 } from 'react-router-dom';
+
 import './App.css';
-import Cabecalho from './componentes/Cabecalho/Cabecalho'
-import Menu from './componentes/Menu/Menu'
-import Login from './componentes/Login/Login'
-import Registro from './componentes/Registro/Registro'
-import Sensores from './componentes/Sensores/Sensores';
 import Sensor from './componentes/Monitoramento/Sensor/Sensor';
 import Dados from './componentes/Monitoramento/Dados/Dados';
 import Mapa from './componentes/Monitoramento/Mapa/Mapa';
+import Initial from './telas/Initial/Initial';
+import Monitoramento from './telas/Monitoramento/Monitoramento';
+import PosLogin from './telas/PosLogin/PosLogin';
+import InitialNotLogged from './telas/InitialNotLogged/InitialNotLogged';
+import Conta from './telas/Conta/Conta';
+import { userLogged } from './telas/Initial/Initial'
 
-//Página Inicial não logado
 
-// function App() {
-//   return (
-//     <div>
-//       <Cabecalho img="./imagens/login.svg"/>
-//       <Imagem />
-//       <Menu text="Realizar login"/>
-//     </div>
-//   );
-// }
 
-//Tela de login
 
-// function App() {
-//   return (
-//     <div>
-//       <Cabecalho img="./imagens/login.svg"/>
-//       <Login />
-//     </div>
-//   );
-// }
+function App () {
 
-// Tela de registro
-
-// function App() {
-//   return (
-//     <div>
-//       <Cabecalho img="./imagens/login.svg"/>
-//       <Registro />
-//     </div>
-//   );
-// }
-
-//Página Inicial
-
-// function App() {
-//   return (
-//     <div>
-//       <Cabecalho img="./imagens/conta.svg"/>
-//       <Imagem />
-//       <Menu text="Selecionar sensor"/>
-//     </div>
-//   );
-// }
-
-// Componente de Página Inicial
-const Home = () => {
-  return <h2>Home Page - Bem-vindo!</h2>;
-};
+  var usuarios = [
+    { nome: 'dessotti', senha: 'gabriel123'},
+    { nome: 'user', senha: 'user'},
+    { nome: 'felipe', senha: 'felipe123'}
+  ];
 
 // Componente de Boas-Vindas
 const Welcome = () => {
@@ -88,33 +50,50 @@ const Welcome = () => {
 };
 
 
-function App() {
-  const [authenticated, setAuthenticated] = useState(false);
 
-  const handleLogin = () => {
-    setAuthenticated(true);
-  };
+  // const [authenticated, setAuthenticated] = useState(false);
+
+  // const handleLogin = () => {
+  //   setAuthenticated(true);
+  // };
+
+  // return (
+  //   <Router> 
+  //     <div>
+  //       <Routes>
+  //         <Route path="/login" element={<Login onLogin={handleLogin} />} />
+  //         <Route
+  //           path="/home"
+  //           element={
+  //             authenticated ? <Home /> : <Navigate to="/login" replace />
+  //           }
+  //         />
+  //         <Route path="/sensores" element={<Sensores />} />
+
+  //         <Route path="/welcome" element={<Welcome />} />
+  //         <Route path="*" element={<Navigate to="/login" replace />} />
+  //       </Routes>
+  //     </div>
+  //   </Router>
+  var usuarioEncontrado = usuarios.filter(function(usuario) {
+    return usuario.nome === userLogged;
+  });
 
   return (
-    <Router> 
-      <div>
-        <Routes>
-          <Route path="/login" element={<Login onLogin={handleLogin} />} />
-          <Route
-            path="/home"
-            element={
-              authenticated ? <Home /> : <Navigate to="/login" replace />
-            }
-          />
-          <Route path="/sensores" element={<Sensores />} />
-
-          <Route path="/welcome" element={<Welcome />} />
-          <Route path="*" element={<Navigate to="/login" replace />} />
-        </Routes>
-      </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<InitialNotLogged/>}></Route>
+        <Route path='/login' element={<Initial/>}></Route>
+        <Route path='/login/posLogin' element={<PosLogin/>}></Route>
+        <Route path='/login/posLogin/monitoramento' element={<Monitoramento/>}></Route>
+        <Route path='/login/posLogin/conta' element={<Conta/>}></Route>
+        <Route path='/login/posLogin/monitoramento/conta' element={<Conta user={usuarioEncontrado}/>}></Route>
+      </Routes>
     </Router>
+
   );
+
+  // colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)
+
 }
-
-
 export default App;

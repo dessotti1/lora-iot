@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Alerts from "../Alert/Alerts";
 import Botao from "../Botao/Botao";
 import "./Login.css";
 import { useNavigate, useLocation } from "react-router-dom";
