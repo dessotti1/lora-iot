@@ -18,7 +18,7 @@ import PosLogin from './telas/PosLogin/PosLogin';
 import InitialNotLogged from './telas/InitialNotLogged/InitialNotLogged';
 import Conta from './telas/Conta/Conta';
 import { userLogged } from './telas/Initial/Initial'
-
+import  Cadastro from './telas/Cadastro/Cadastro';
 
 
 
@@ -29,27 +29,6 @@ function App () {
     { nome: 'user', senha: 'user'},
     { nome: 'felipe', senha: 'felipe123'}
   ];
-
-// Componente de Boas-Vindas
-const Welcome = () => {
-  return (
-    <div>
-      <div className='total-content'>
-        <div className='grid-item'>
-          <Sensor text="W45N1B71" location="(-45.78, 75.67)" data="5" ativo={true} />
-        </div>
-        <div className='grid-item'>
-          <Mapa latitude="-22.008789" longitude="-47.904553"/>
-        </div>
-        <div className='grid-item'>
-          <Dados dados="5"/>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-
 
   // const [authenticated, setAuthenticated] = useState(false);
 
@@ -82,7 +61,7 @@ const Welcome = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<InitialNotLogged/>}></Route>
+        <Route path='/' element={<Cadastro/>}></Route>
         <Route path='/login' element={<Initial/>}></Route>
         <Route path='/login/posLogin' element={<PosLogin/>}></Route>
         <Route path='/login/posLogin/monitoramento' element={<Monitoramento/>}></Route>
